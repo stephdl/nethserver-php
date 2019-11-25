@@ -7,7 +7,6 @@ max_execution_time = { $php{MaxExecutionTime} || "0" }
 memory_limit = { $MemoryLimit = $php{MemoryLimit} || "128"; }M
 post_max_size = { $PostMaxSize = $php{PostMaxSize} || "8"; }M
 upload_max_filesize = { $UploadMaxFilesize = $php{UploadMaxFilesize} || "2"; }M {
-
     # Check memory limits consistency. Must be true the relation
     # UploadMaxFilesize < PostMaxSize < MemoryLimit
     # See http://php.net/manual/en/ini.list.php
@@ -22,4 +21,5 @@ upload_max_filesize = { $UploadMaxFilesize = $php{UploadMaxFilesize} || "2"; }M 
 
     ''; 
 }
+max_file_uploads = {$php{'MaxFileUploads'} ||'20';}
 date.timezone = "{ $php{DateTimezone} || 'UTC' }"
